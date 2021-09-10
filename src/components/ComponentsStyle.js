@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 const Container = styled.div`
+background-color: #FFFFFF;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -18,10 +19,13 @@ const Input = styled.input`
     margin-top: 8px;
     width: 303px;
     height: 45px;
-    background: #FFFFFF;
     border: 1px solid #D5D5D5;
     box-sizing: border-box;
     border-radius: 5px;
+    cursor: ${props => props.habilitado ? "pointer" : "not-allowed"};
+    background-color: ${ props => props.habilitado ? "#FFFFFF" : "#F2F2F2"};
+    opacity: ${props => props.habilitado ? 1 : 0.6};
+    
     ::placeholder{
         text-align: start;
         font-size: 19px;
@@ -40,6 +44,8 @@ const Button = styled.button`
     text-align: center;
     border: none;
     margin-top: 8px;
+    opacity: ${props => props.habilitado ? 1 : 0.6};
+    
 ` 
 
 const Register = styled.a`
@@ -108,6 +114,7 @@ const Topo = styled.header`
         font-size: 18px;
         color: #666666;
         margin-right: 30px;
+        margin-top: 20px;
     }
     `
     const StyledFooter = styled.footer`
@@ -141,6 +148,102 @@ const Topo = styled.header`
             }
         }
     `
+    const CaixaHabito = styled.div`
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: space-around;
+    width: 340px;
+    height: 180px;
+    border-radius: 5px;
+        div {
+            flex-direction: row;
+            margin-left: 15px;
+        }
+
+        a{
+            font-size: 15.976px;
+            color: #52B6FF;
+            margin-right: 30px;
+        }
+        input{
+            margin-left: 15px;
+        }
 
 
-export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter}
+    `
+    const BtnHabito = styled.button`
+    width: 84px;
+    height: 35px;
+    background-color: #52B6FF;
+    color: #ffffff;
+    font: 16px;
+    border: none;
+    border-radius: 4.6px;
+    margin-right: 20px;
+    `
+
+    const DivButton = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    `
+    const BtnDia = styled.button`
+    width: 30px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 5px;
+    color: #DBDBDB;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-right: 5px;
+    `
+
+    const ContainerToday = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 90px;
+    margin-left: 10px;
+        h1{
+            font-size: 23px;
+            color: #126BA5;
+        }
+        h2{
+            font-size: 18px;
+            color: #BABABA;
+        }
+        div{
+            margin-top: 10px;
+        }
+    `
+    const BoxHabito = styled.div`
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 340px;
+    height: 94px;
+    border-radius: 5px;
+        button{ 
+            background: #EBEBEB;
+            width: 69px;
+            height: 69px;
+            border: 1px solid #E7E7E7;
+            border-radius: 5px;
+            
+        }
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color:#666666 ;
+         }
+         h4{
+             font-size: 13px;
+             color:#666666 ;
+         }
+    `
+
+
+export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter,CaixaHabito,BtnHabito,DivButton,BtnDia,ContainerToday,BoxHabito}

@@ -1,6 +1,7 @@
 
 import { MyHabits,Content,Body } from "./ComponentsStyle";
 import Footer from "./Footer";
+import AddHabit from "./addHabit";
 export default function Habits(){
     return(
 <>
@@ -9,7 +10,8 @@ export default function Habits(){
             <button>+</button>
         </MyHabits>
         <Content>
-                <h2>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</h2>
+            <AddHabit/>
+            <h2>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</h2> 
         </Content>
         <Footer/>
     </>
