@@ -1,15 +1,22 @@
 
 
 import { StyledFooter } from "./ComponentsStyle";
-import borda from "../img/borda.png"
+import { Link } from "react-router-dom";
+import { CircularProgressbar } from "react-circular-progressbar";
+import 'react-circular-progressbar/dist/styles.css'
 export default function Footer(){
+    const porcerto = 66;
 return(
     <StyledFooter>
-        <a>Hábitos</a>
-        <div>Hoje
-            <img src={borda}></img>
+        <Link to="/habitos">
+        <span>Hábitos</span>
+        </Link>
+        <Link to="/hoje">
+        <div>
+        <CircularProgressbar value={porcerto} text={ `${porcerto}%`} />
         </div>
-        <a>Histórico</a>
+        </Link>
+        <span>Histórico</span>
     </StyledFooter>
 );
 

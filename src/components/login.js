@@ -1,11 +1,13 @@
 
 import { Register,Input,Container,Button } from "./ComponentsStyle"
 import logo from "../img/logo.png"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import axios from "axios";
 import { useHistory } from "react-router";
 import Loader from "react-loader-spinner";
+import UserContext from "../contexts/UserContext";
 export default function Login(){
+    const {user,setUser} = useContext(UserContext);
     const [habilitado,setHabilitado] = useState(true);
     let history = useHistory();
     const [email,setEmail] = useState("");
@@ -16,10 +18,14 @@ export default function Login(){
             email,
             password
         }
-        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",body).then(Redirecionar).finally(Carregar).catch(() => setTimeout(Error,1500));
+        const promisse = axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",body)
+        promisse.then(Redirecionar);
+        promisse.finally(Carregar);
+        promisse.catch(Error);
     }
 
-    function Redirecionar(){
+    function Redirecionar(res){
+        setUser(res.data)
         setTimeout(()=>history.push("/hoje"),2000);
     }
     function Carregar(){

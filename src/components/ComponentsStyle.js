@@ -76,7 +76,10 @@ const Topo = styled.header`
         margin-left: 10px;
     }
     img{
-        margin-right: 30px;
+        margin-right: 10px;
+        width: 51px;
+        height: 51px;
+        border-radius: 98.5px;
     }
 `
 
@@ -131,7 +134,6 @@ const Topo = styled.header`
     color: #52B6FF;
 
         div{
-            position: relative;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -142,11 +144,11 @@ const Topo = styled.header`
             margin-bottom: 60px;
             color: #ffffff;
 
-            img{
-                position: absolute;
-                margin-left: 12px;
-            }
         }
+        a{
+            text-decoration: none;
+        }
+      
     `
     const CaixaHabito = styled.div`
     display: flex;
