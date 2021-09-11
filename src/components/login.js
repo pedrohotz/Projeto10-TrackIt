@@ -16,7 +16,7 @@ export default function Login(){
             email,
             password
         }
-        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",body).then(Redirecionar).finally(Carregar).catch(setTimeout(Error,1500));
+        axios.post("https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login",body).then(Redirecionar).finally(Carregar).catch(() => setTimeout(Error,1500));
     }
 
     function Redirecionar(){
