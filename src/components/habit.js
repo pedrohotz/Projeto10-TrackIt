@@ -6,7 +6,7 @@ import { useContext} from "react";
 import UserContext from "../contexts/UserContext";
 export default function Habit(props) {
     const { user } = useContext(UserContext);
-    const days = [{ day: 'D', id: 1}, { day: 'S', id: 2}, { day: 'T', id: 3}, { day: 'Q', id: 4}, { day: 'Q', id: 5}, { day: 'S', id: 6}, { day: 'S', id: 7}]
+    const days = [{ day: 'D', id: 0}, { day: 'S', id: 1}, { day: 'T', id: 2}, { day: 'Q', id: 3}, { day: 'Q', id: 4}, { day: 'S', id: 5}, { day: 'S', id: 6}]
 
     function  deletarHabito(id){
         Swal.fire({

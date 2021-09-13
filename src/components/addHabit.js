@@ -7,7 +7,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 export default function AddHabit(props){
     const [selectedDay,setSelectedDay] = useState([]);
-    const [days] = useState([{ day: 'D', id: 1,state:false}, { day: 'S', id: 2,state:false}, { day: 'T', id: 3,state:false}, { day: 'Q', id: 4,state:false}, { day: 'Q', id: 5,state:false}, { day: 'S', id: 6,state:false}, { day: 'S', id: 7,state:false}])
+    const [days] = useState([{ day: 'D', id: 0,state:false}, { day: 'S', id: 1,state:false}, { day: 'T', id: 2,state:false}, { day: 'Q', id: 3,state:false}, { day: 'Q', id: 4,state:false}, { day: 'S', id: 5,state:false}, { day: 'S', id: 6,state:false}])
     const [name,setName] = useState("");
     const {user} = useContext(UserContext);
     function toggleDay(day){

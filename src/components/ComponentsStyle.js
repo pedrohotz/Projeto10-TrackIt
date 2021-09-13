@@ -92,7 +92,7 @@ const Topo = styled.header`
         color: #126BA5;
         font-size: 23px;
         margin-top: 90px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         width: 100vw;
         
 
@@ -105,6 +105,7 @@ const Topo = styled.header`
             border: none;
             margin-right: 30px;
         }
+    
      `
 
     const Content = styled.div`
@@ -117,7 +118,7 @@ const Topo = styled.header`
         font-size: 18px;
         color: #666666;
         margin-right: 30px;
-        margin-top: 20px;
+        margin-top: 10px;
     }
     `
     const StyledFooter = styled.footer`
@@ -147,6 +148,7 @@ const Topo = styled.header`
         }
         a{
             text-decoration: none;
+            color:#52B6FF;
         }
       
     `
@@ -212,10 +214,6 @@ const Topo = styled.header`
             font-size: 23px;
             color: #126BA5;
         }
-        h2{
-            font-size: 18px;
-            color: #BABABA;
-        }
         div{
             margin-top: 10px;
         }
@@ -228,22 +226,10 @@ const Topo = styled.header`
     width: 340px;
     height: 94px;
     border-radius: 5px;
-        button{ 
-            background: #EBEBEB;
-            width: 69px;
-            height: 69px;
-            border: 1px solid #E7E7E7;
-            border-radius: 5px;
-            
-        }
         h3 {
             font-size: 20px;
             margin-bottom: 10px;
             color:#666666 ;
-         }
-         h4{
-             font-size: 13px;
-             color:#666666 ;
          }
     `
     const Habito = styled.div`
@@ -279,4 +265,22 @@ const Topo = styled.header`
         justify-content: space-between;
         align-items: center;
     `     
-export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter,CaixaHabito,BtnHabito,DivButton,BtnDia,ContainerToday,BoxHabito,Habito,DivBotoes}
+
+    const BtnCheck = styled.button`
+        background: ${props => props.estado ? "#8FC549" : "#EBEBEB"};
+            width: 69px;
+            height: 69px;
+            border: 1px solid #E7E7E7;
+            border-radius: 5px;
+    `
+    const Sequencia = styled.h4`
+             font-size: 13px;
+             color: ${props => props.estado ? "#8FC549" : "#666666"};
+    `
+    const Progress = styled.h2`
+        font-size: 18px;
+        color: ${props => props.estado ? "#8FC549" : "#666666"};
+        margin-top: 10px;
+    `
+
+export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter,CaixaHabito,BtnHabito,DivButton,BtnDia,ContainerToday,BoxHabito,Habito,DivBotoes,BtnCheck,Sequencia,Progress}
