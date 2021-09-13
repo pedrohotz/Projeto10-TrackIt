@@ -1,9 +1,11 @@
 import { Habito, BtnDia, DivBotoes } from "./ComponentsStyle";
 import lixeira from "../img/lixeira.png"
-import { useState } from "react";
 import Swal from "sweetalert2";
-
+import { deleteHabito } from "./api";
+import { useContext} from "react";
+import UserContext from "../contexts/UserContext";
 export default function Habit(props) {
+    const { user } = useContext(UserContext);
     const days = [{ day: 'D', id: 1}, { day: 'S', id: 2}, { day: 'T', id: 3}, { day: 'Q', id: 4}, { day: 'Q', id: 5}, { day: 'S', id: 6}, { day: 'S', id: 7}]
 
     function  deletarHabito(id){
@@ -15,7 +17,9 @@ export default function Habit(props) {
             cancelButtonText: "Não",
         }).then((res) => {
             if(res.isConfirmed === true){
-                console.log("deletou")
+                deleteHabito(user.token,id)
+               props.habitos.splice(props.habitos.indexOf(props.index))
+               props.setHabitos([...props.habitos]);
             }
         })
 

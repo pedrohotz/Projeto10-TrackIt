@@ -24,7 +24,7 @@ export default function Habits() {
             </MyHabits>
             <Content>
                 <AddHabit hidden={hidden} setHidden={setHidden} setHabitos={setHabitos} />
-                {habitos.length === 0 ? <h2>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</h2> : habitos.map((habito) => <Habit id={habito.id} name={habito.name} days={habito.days} habitos={habitos} setHabitos={setHabitos} />)}
+                {habitos.length === 0 ? <h2>Você não tem nenhum hábito cadastrado ainda. Adicione um hábito para começar a trackear!</h2> : habitos.map((habito,index) => <Habit id={habito.id} name={habito.name} days={habito.days} habitos={habitos} setHabitos={setHabitos} index={index} />)}
             </Content>
             <Footer />
         </>

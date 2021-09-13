@@ -12,5 +12,15 @@ function getHabitos(token) {
     return promise;
 }
 
+function deleteHabito(token,id){
+    const config = {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+    const promise = axios.delete(`https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/habits/${id}`, config);
+    return promise;
+}
 
-export {getHabitos};
+
+export {getHabitos,deleteHabito};
