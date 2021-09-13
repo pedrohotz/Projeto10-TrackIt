@@ -151,7 +151,7 @@ const Topo = styled.header`
       
     `
     const CaixaHabito = styled.div`
-    display: flex;
+    display: ${props => props.hidden ? "none" : "flex"};
     flex-direction: column;
     background-color: #ffffff;
     justify-content: space-around;
@@ -193,10 +193,10 @@ const Topo = styled.header`
     const BtnDia = styled.button`
     width: 30px;
     height: 30px;
-    background: #FFFFFF;
+    background: ${props => props.selecionado ? "#CFCFCF" : "#FFFFFF"};
     border: 1px solid #D5D5D5;
     border-radius: 5px;
-    color: #DBDBDB;
+    color: ${props => props.selecionado ? "#FFFFFF" : "#DBDBDB"};
     font-size: 20px;
     margin-bottom: 30px;
     margin-right: 5px;
@@ -246,6 +246,37 @@ const Topo = styled.header`
              color:#666666 ;
          }
     `
+    const Habito = styled.div`
+    width: 340px;
+    height: 91px;
+    display: flex;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 10px;
+    flex-direction: column;
+    justify-content: center;
+         img{
+             width: 15px;
+             height: 15px;
+             margin-right: 10px;
+         }
+         div{
+            display: flex;
+            margin-left: 10px;
+            margin-bottom: 10px;
+         }
+         h1{
+             font-size: 20px;
+             color:#666666;
+         }
+         button{
+             margin-bottom: 0px;
+         }
+    `
 
-
-export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter,CaixaHabito,BtnHabito,DivButton,BtnDia,ContainerToday,BoxHabito}
+    const DivBotoes = styled.div`
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    `     
+export {Register,Button,Input,Container,Topo,MyHabits,Content,StyledFooter,CaixaHabito,BtnHabito,DivButton,BtnDia,ContainerToday,BoxHabito,Habito,DivBotoes}
